@@ -2,7 +2,8 @@ async function TasksPage() {
   const response = await fetch("http://localhost:3000/api/tasks", {
     cache: "no-store",
   });
-  await response.json();
+  const tasks = await response.json();
+  console.log(tasks);
 
   return <div>TasksPage</div>;
 }
