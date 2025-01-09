@@ -23,9 +23,7 @@ Vibe is a modern social media platform that leverages the power of **Next.js**, 
 
 ## **Deployed on Vercel**
 
-Vibe is successfully deployed and live on [Vercel](https://vercel.com). You can check out the live version of the app by visiting:
-
-- **Vibe Live Demo**: [https://vibe.vercel.app](https://vibe.vercel.app)
+Vibe is successfully deployed and live on [Vercel](https://vercel.com).
 
 ---
 
