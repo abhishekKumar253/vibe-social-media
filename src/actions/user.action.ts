@@ -11,7 +11,6 @@ export async function syncUser() {
 
     if (!userId || !user) return;
 
-    // check if user exists
     const existingUser = await prisma.user.findUnique({
       where: {
         clerkId: userId,
@@ -68,7 +67,7 @@ export async function getDbUserId() {
 export async function getRandomUsers() {
   try {
     const userId = await getDbUserId();
-    
+
     if (!userId) return [];
 
     // get 3 random users exclude ourselves & users that we already follow
@@ -114,7 +113,7 @@ export async function toggleFollow(targetUserId: string) {
 
     if (!userId) return;
 
-    if (userId === targetUserId) throw new Error("You can't follow yourself");
+    if (userId === targetUserId) throw new Error("You cannot follow yourself");
 
     const existingFollow = await prisma.follows.findUnique({
       where: {
@@ -148,8 +147,8 @@ export async function toggleFollow(targetUserId: string) {
         prisma.notification.create({
           data: {
             type: "FOLLOW",
-            userId: targetUserId,
-            creatorId: userId,
+            userId: targetUserId, 
+            creatorId: userId, 
           },
         }),
       ]);
